@@ -1,0 +1,53 @@
+{
+  "nutrients": [
+    {
+      "name": "Natrium",
+      "ranges": [
+        {
+          "minAge": 1,
+          "maxAge": 4,
+          "amount": "400",
+          "unit": "mg"
+        },
+        {
+          "minAge": 5,
+          "maxAge": 7,
+          "amount": "500",
+          "unit": "mg"
+        },
+        {
+          "minAge": 8,
+          "maxAge": 10,
+          "amount": "750",
+          "unit": "mg"
+        },
+        {
+          "minAge": 11,
+          "maxAge": 13,
+          "amount": "1100",
+          "unit": "mg"
+        },
+        {
+          "minAge": 14,
+          "maxAge": 15,
+          "amount": "1400",
+          "unit": "mg"
+        },
+        {
+          "minAge": 16,
+          "maxAge": 99,
+          "amount": "1500",
+          "unit": "mg"
+        }
+      ]
+    },
+    {
+      "name": "Natrium",
+      "ranges": []
+    },
+    {
+      "name": "Natrium",
+      "ranges": []
+    }
+  ]
+}

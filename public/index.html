@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ernährungsberater</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Persönlicher Ernährungsberater</h1>
+        
+        <div class="input-section">
+            <form id="userDataForm">
+                <div class="form-group">
+                    <label for="age">Alter:</label>
+                    <input type="number" id="age" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="gender">Geschlecht:</label>
+                    <select id="gender" required>
+                        <option value="male">Männlich</option>
+                        <option value="female">Weiblich</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="weight">Gewicht (kg):</label>
+                    <input type="number" id="weight" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="height">Größe (cm):</label>
+                    <input type="number" id="height" required>
+                </div>
+
+                <!-- Neu: Aktivitätslevel-Auswahl -->
+                <div class="form-group">
+                    <label for="activityLevel">Aktivitätslevel:</label>
+                    <select id="activityLevel">
+                        <option value="1.2">Sitzend (1.2)</option>
+                        <option value="1.375">Leicht aktiv (1.375)</option>
+                        <option value="1.55" selected>Moderate Aktivität (1.55)</option>
+                        <option value="1.725">Sehr aktiv (1.725)</option>
+                        <option value="1.9">Extrem aktiv (1.9)</option>
+                    </select>
+                </div>
+
+                <!-- Neu: Ziel-Auswahl -->
+                <div class="form-group">
+                    <label for="goal">Ziel:</label>
+                    <select id="goal">
+                        <option value="0">Gewicht halten (0 kcal)</option>
+                        <option value="-300">Abnehmen (-300 kcal)</option>
+                        <option value="300">Zunehmen (+300 kcal)</option>
+                    </select>
+                </div>
+
+                <!-- Neu: Anzahl Mahlzeiten -->
+                <div class="form-group">
+                    <label for="meals">Mahlzeiten pro Tag:</label>
+                    <select id="meals">
+                        <option value="2">2</option>
+                        <option value="3" selected>3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                
+                <button type="submit">Berechnen</button>
+            </form>
+        </div>
+
+        <div class="result-section hidden" id="resultSection">
+            <h2>Ergebnisse</h2>
+            <div class="result-grid" id="nutrientResults"></div>
+        </div>
+
+        <div class="error-message hidden" id="errorMessage">
+            Bitte fülle alle Felder korrekt aus!
+        </div>
+
+        <div class="admin-section">
+            <button id="adminLoginBtn">Admin Login</button>
+            <div id="adminPanel" class="hidden">
+                <h2>Admin Bereich</h2>
+                <div id="adminForms">
+                    <div class="admin-form">
+                        <h3>Neuen Nährstoff hinzufügen</h3>
+                        <form id="addNutrientForm">
+                            <input type="text" id="nutrientName" placeholder="Nährstoffname" required>
+                            
+                            <div class="age-ranges">
+                                <div class="age-range">
+                                    <input type="number" class="minAge" placeholder="Von Alter" required>
+                                    <input type="number" class="maxAge" placeholder="Bis Alter" required>
+                                    <input type="number" class="amount" placeholder="Menge" step="any" required>
+                                    <select class="unit">
+                                        <option value="g">g</option>
+                                        <option value="mg">mg</option>
+                                        <option value="µg">µg</option>
+                                        <option value="IU">IE</option>
+                                    </select>
+                                    <select class="calculation">
+                                        <option value="perKg">pro kg</option>
+                                        <option value="fixed">Fester Wert</option>
+                                    </select>
+                                    <button type="button" class="removeRange">×</button>
+                                </div>
+                            </div>
+                            
+                            <button type="button" id="addAgeRange">+ Altersbereich hinzufügen</button>
+                            <button type="submit">Hinzufügen</button>
+                        </form>
+                    </div>
+
+                    <div class="admin-form">
+                        <h3>Vorhandene Nährstoffe</h3>
+                        <ul id="nutrientList"></ul>
+                    </div>
+
+                    <div class="admin-form">
+                        <h3>Admin Passwort ändern</h3>
+                        <form id="changePasswordForm">
+                            <input type="password" id="newPassword" placeholder="Neues Passwort" required>
+                            <button type="submit">Ändern</button>
+                        </form>
+                        <button id="logoutBtn">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="loginModal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Admin Login</h2>
+                <form id="loginForm">
+                    <input type="password" id="adminPassword" placeholder="Passwort" required>
+                    <button type="submit">Einloggen</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
