@@ -2,6 +2,12 @@
 
 Ein einfacher, aber umfangreich erweiterter Webserver + Frontend zur Berechnung von Ernährungsempfehlungen, BMI und Makronährstoffverteilung. Enthält einen Admin-Bereich zum Verwalten von Nährstoffen und Altersbereichen.
 
+
+![image](https://github.com/user-attachments/assets/75e2533d-7d2c-4cd7-a9d4-8f770c00ce43)
+
+
+
+
 ## Inhaltsverzeichnis
 
 1. [Über das Projekt](#über-das-projekt)  
